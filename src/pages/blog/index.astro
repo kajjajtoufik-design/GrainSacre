@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="Magazine" description="Tous nos guides, comparatifs et conseils sur le café : torréfaction, espresso, méthodes douces.">
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-20 sm:pb-28">
+    <div class="text-center mb-14">
+      <span class="text-xs font-600 tracking-widest uppercase text-caramel">Le magazine</span>
+      <h1 class="font-display text-3xl sm:text-5xl font-600 mt-2 tracking-tight">Tous nos articles</h1>
+      <p class="mt-4 text-moka/75 max-w-xl mx-auto">Guides, tests et conseils pour progresser, une tasse à la fois.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map((post) => <ArticleCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

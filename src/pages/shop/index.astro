@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import { SITE } from '../../config/site';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Si l'e-commerce est activé, on charge les produits réels.
+const products = SITE.ECOMMERCE_ENABLED
+  ? (await getCollection('products', ({ data }) => !data.draft))
+  : [];
+
+const newsletterAction = SITE.newsletterAction || '#';
+---
+
+<BaseLayout
+  title={SITE.ECOMMERCE_ENABLED ? 'Boutique' : 'Boutique — bientôt'}
+  description="Notre café de torréfacteurs d'exception arrive bientôt. Inscrivez-vous à la liste d'attente."
+>
+  {
+    SITE.ECOMMERCE_ENABLED ? (
+      <!-- ════════ BOUTIQUE ACTIVE ════════ -->
+      <section class="max-w-7xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-20 sm:pb-28">
+        <h1 class="font-display text-3xl sm:text-5xl font-600 tracking-tight text-center">Notre boutique</h1>
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((p) => (
+            <article class="bg-ivoire rounded-3xl border border-espresso/12 p-5">
+              <div class="aspect-square rounded-2xl overflow-hidden bg-creme mb-4"><img src={p.data.image} alt={p.data.name} class="w-full h-full object-cover" /></div>
+              <h2 class="font-display text-lg font-600">{p.data.name}</h2>
+              <p class="font-display text-2xl font-600 text-caramel mt-2">{p.data.price}€</p>
+              <button class="mt-4 w-full bg-espresso text-ivoire font-600 py-3 rounded-full hover:bg-moka transition-colors">Ajouter au panier</button>
+            </article>
+          ))}
+        </div>
+      </section>
+    ) : (
+      <!-- ════════ SHOP EN CONSTRUCTION ════════ -->
+      <section class="relative grain overflow-hidden bg-gradient-to-b from-creme to-ivoire pt-28 sm:pt-36 pb-20 sm:pb-28">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative z-10">
+          <span class="inline-flex items-center gap-2 text-xs font-700 tracking-widest uppercase text-caramel bg-or/15 px-4 py-1.5 rounded-full mb-6">
+            <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-or opacity-75" /><span class="relative inline-flex rounded-full h-2 w-2 bg-or" /></span>
+            Boutique en préparation
+          </span>
+          <h1 class="font-display text-3xl sm:text-5xl font-600 tracking-tight leading-tight">Notre café arrive<br /><span class="italic text-caramel gold-underline">bientôt</span> chez vous</h1>
+          <p class="mt-6 text-lg text-moka/80 max-w-xl mx-auto leading-relaxed">
+            Nous sélectionnons en ce moment des grains de torréfacteurs d'exception. Notre boutique ouvrira ses portes très prochainement.
+          </p>
+
+          <div class="mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto">
+            {['1559056199-641a0ac8b55e', '1611854779393-1b2da9d400fe', '1587734195503-904fca47e0e9'].map((id) => (
+              <div class="relative">
+                <div class="aspect-square rounded-2xl overflow-hidden bg-creme"><img src={`https://images.unsplash.com/photo-${id}?q=80&w=500&auto=format&fit=crop`} alt="Aperçu café à venir" loading="lazy" class="w-full h-full object-cover blur-[3px] scale-105 opacity-80" /></div>
+                <div class="absolute inset-0 flex items-center justify-center"><span class="text-3xl">🔒</span></div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-12 bg-ivoire rounded-3xl border border-espresso/10 p-7 sm:p-9 max-w-lg mx-auto shadow-xl shadow-espresso/5">
+            <p class="font-display text-xl font-600">Soyez prévenu·e de l'ouverture</p>
+            <p class="text-sm text-moka/70 mt-2">Inscrivez-vous à la liste d'attente et recevez <span class="text-caramel font-600">-15% sur votre première commande</span>.</p>
+            <form action={newsletterAction} method="post" class="mt-6 flex flex-col sm:flex-row gap-3">
+              <input type="email" name="email" required placeholder="votre@email.com" class="flex-1 px-5 py-3.5 rounded-full border border-espresso/20 bg-creme/50 focus:outline-none focus:border-or focus:ring-2 focus:ring-or/20" />
+              <button type="submit" class="bg-or text-espresso font-700 px-6 py-3.5 rounded-full hover:bg-o1 transition-colors whitespace-nowrap">Me prévenir</button>
+            </form>
+            <p class="text-xs text-moka/50 mt-3">Ouverture prévue 2026 · Aucun spam, désinscription en un clic.</p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>

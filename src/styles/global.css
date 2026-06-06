@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #fbf7f0;
+}
+
+/* Texture subtile */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(43, 29, 23, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+}
+
+/* Soulignement de nav animé */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1.5px;
+  width: 0;
+  background: #c99a4b;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Apparition au chargement */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.d1 { animation-delay: 0.05s; }
+.d2 { animation-delay: 0.15s; }
+.d3 { animation-delay: 0.25s; }
+.d4 { animation-delay: 0.35s; }
+.d5 { animation-delay: 0.45s; }
+
+.gold-underline {
+  background: linear-gradient(transparent 62%, rgba(201, 154, 75, 0.35) 62%);
+}
+
+/* Mise en forme du corps d'article */
+.prose-coffee h2 {
+  @apply font-display text-2xl sm:text-3xl font-600 mt-12 mb-4 text-espresso;
+}
+.prose-coffee h3 {
+  @apply font-display text-xl font-600 mt-8 mb-3 text-espresso;
+}
+.prose-coffee p {
+  @apply text-moka/90 leading-relaxed mb-5 text-lg;
+}
+.prose-coffee a {
+  @apply text-caramel underline decoration-or/40 hover:decoration-or transition;
+}
+.prose-coffee ul {
+  @apply list-disc pl-6 mb-5 space-y-2 text-moka/90 text-lg;
+}
+.prose-coffee blockquote {
+  @apply border-l-4 border-or pl-5 italic text-moka my-6;
+}
+.prose-coffee img {
+  @apply rounded-2xl my-8;
+}

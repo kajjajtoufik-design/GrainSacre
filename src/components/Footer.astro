@@ -1,0 +1,55 @@
+---
+import { SITE } from '../config/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-espresso text-creme/80">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="sm:col-span-2 lg:col-span-1">
+      <p class="font-display text-2xl font-600 text-creme">{SITE.name}<span class="text-or">.</span></p>
+      <p class="mt-3 text-sm text-creme/60 max-w-xs">
+        Le magazine indépendant des amateurs de café. Guides, tests et comparatifs sans concession.
+      </p>
+    </div>
+    <div>
+      <h4 class="font-600 text-creme mb-4 text-sm uppercase tracking-wider">Magazine</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/blog/" class="hover:text-or transition-colors">Tous les articles</a></li>
+        <li><a href="/blog/" class="hover:text-or transition-colors">Torréfaction</a></li>
+        <li><a href="/blog/" class="hover:text-or transition-colors">Méthodes douces</a></li>
+        <li><a href="/blog/" class="hover:text-or transition-colors">Espresso</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-600 text-creme mb-4 text-sm uppercase tracking-wider">Le site</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/comparateur/" class="hover:text-or transition-colors">Comparateur</a></li>
+        <li>
+          <a href="/shop/" class="hover:text-or transition-colors inline-flex items-center gap-1.5">
+            Shop
+            {!SITE.ECOMMERCE_ENABLED && (
+              <span class="text-[10px] font-700 bg-or/20 text-o1 px-1.5 py-0.5 rounded-full leading-none">Bientôt</span>
+            )}
+          </a>
+        </li>
+        <li><a href="/#newsletter" class="hover:text-or transition-colors">Newsletter</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-600 text-creme mb-4 text-sm uppercase tracking-wider">Légal</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/mentions-legales/" class="hover:text-or transition-colors">Mentions légales</a></li>
+        <li><a href="/confidentialite/" class="hover:text-or transition-colors">Confidentialité</a></li>
+        <li><a href="/affiliation/" class="hover:text-or transition-colors">Affiliation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-creme/10">
+    <div
+      class="max-w-7xl mx-auto px-5 sm:px-8 py-6 text-xs text-creme/50 flex flex-col sm:flex-row justify-between gap-2"
+    >
+      <p>© {year} {SITE.name}. Tous droits réservés.</p>
+      <p>Certains liens sont affiliés.</p>
+    </div>
+  </div>
+</footer>

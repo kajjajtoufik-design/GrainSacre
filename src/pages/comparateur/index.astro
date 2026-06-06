@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const machines = [
+  {
+    cat: 'auto', name: 'Barista Pro X', type: 'Automatique à grains', price: '699€', oldPrice: '799€',
+    image: 'https://images.unsplash.com/photo-1610889556528-9a770e32642f?q=80&w=700&auto=format&fit=crop',
+    alt: 'Machine à café automatique en inox', rating: 4.6, recommended: true,
+    features: [['Broyeur intégré 13 réglages', true], ['Mousseur lait automatique', true], ['Écran tactile', true], ['Encombrement moyen', false]],
+  },
+  {
+    cat: 'manuelle', name: 'Artisan Lever', type: 'Manuelle expresso', price: '449€', oldPrice: null,
+    image: 'https://images.unsplash.com/photo-1565452344518-47faca79dc69?q=80&w=700&auto=format&fit=crop',
+    alt: 'Machine à espresso manuelle noire', rating: 4.3, recommended: false,
+    features: [['Contrôle total extraction', true], ['Buse vapeur pro', true], ['Sans broyeur', false], ['Prise en main exigeante', false]],
+  },
+  {
+    cat: 'capsule', name: 'Compact Capsule', type: 'À capsules', price: '149€', oldPrice: null,
+    image: 'https://images.unsplash.com/photo-1606791405792-1004f1718d0c?q=80&w=700&auto=format&fit=crop',
+    alt: 'Machine à capsules compacte', rating: 4.1, recommended: false,
+    features: [['Ultra compacte', true], ['Prise en main immédiate', true], ['Chauffe rapide 25s', true], ['Coût capsules récurrent', false]],
+  },
+];
+const filters = [['all', 'Toutes'], ['auto', 'Automatique'], ['manuelle', 'Manuelle'], ['capsule', 'À capsules']];
+---
+
+<BaseLayout title="Comparateur de machines à café 2026" description="Filtrez et comparez les meilleures machines à café : prix, broyeur, mousseur, notes. Comparatif indépendant mis à jour en 2026.">
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-20 sm:pb-28">
+    <div class="text-center mb-12">
+      <span class="text-xs font-600 tracking-widest uppercase text-caramel">Outil interactif</span>
+      <h1 class="font-display text-3xl sm:text-5xl font-600 mt-2 tracking-tight">Comparateur de machines à café</h1>
+      <p class="mt-4 text-moka/75 max-w-xl mx-auto">Filtrez selon vos critères et trouvez la machine qui vous correspond. Comparatif mis à jour en 2026.</p>
+    </div>
+
+    <div class="flex flex-wrap gap-3 justify-center mb-10" id="filters">
+      {filters.map(([key, label], i) => (
+        <button data-filter={key} class={`filter-btn ${i === 0 ? 'active' : ''} text-sm font-600 px-5 py-2.5 rounded-full border transition-colors`}>{label}</button>
+      ))}
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6" id="compare-grid">
+      {machines.map((m) => (
+        <article data-cat={m.cat} class={`compare-card relative bg-ivoire rounded-3xl p-6 flex flex-col ${m.recommended ? 'border-2 border-or shadow-xl shadow-or/10' : 'border border-espresso/12 hover:border-caramel/50 hover:shadow-lg transition-all'}`}>
+          {m.recommended && <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-or text-espresso text-xs font-700 px-4 py-1 rounded-full whitespace-nowrap">★ Notre choix</span>}
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-creme"><img src={m.image} alt={m.alt} loading="lazy" class="w-full h-full object-cover" /></div>
+          <h2 class="font-display text-xl font-600">{m.name}</h2>
+          <p class="text-sm text-moka/70 mt-1">{m.type}</p>
+          <div class="flex items-baseline gap-2 mt-4">
+            <span class="font-display text-3xl font-600 text-espresso">{m.price}</span>
+            {m.oldPrice && <span class="text-sm text-moka/60 line-through">{m.oldPrice}</span>}
+          </div>
+          <ul class="mt-5 space-y-2.5 text-sm text-moka flex-1">
+            {m.features.map(([label, ok]) => (
+              <li class={`flex gap-2 ${ok ? '' : 'text-moka/50'}`}><span class={ok ? 'text-sauge' : ''}>{ok ? '✓' : '○'}</span> {label}</li>
+            ))}
+          </ul>
+          <div class="mt-5 text-sm text-moka/60">Note {m.rating}/5</div>
+          <a href="#" rel="sponsored nofollow noopener" class={`mt-5 block text-center font-600 py-3 rounded-full transition-colors ${m.recommended ? 'bg-espresso text-ivoire hover:bg-moka' : 'border border-espresso/25 hover:border-or hover:text-caramel'}`}>Voir le meilleur prix ↗</a>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-12 overflow-x-auto rounded-2xl border border-espresso/12">
+      <table class="w-full text-sm min-w-[640px]">
+        <thead class="bg-espresso text-creme font-500">
+          <tr><th class="text-left p-4">Critère</th>{machines.map((m) => <th class="p-4 text-center">{m.name}</th>)}</tr>
+        </thead>
+        <tbody class="divide-y divide-espresso/8">
+          <tr class="bg-ivoire"><td class="p-4 font-500">Prix</td>{machines.map((m) => <td class="p-4 text-center font-600 text-caramel">{m.price}</td>)}</tr>
+          <tr><td class="p-4 font-500">Type</td>{machines.map((m) => <td class="p-4 text-center">{m.type}</td>)}</tr>
+          <tr class="bg-ivoire"><td class="p-4 font-500">Note</td>{machines.map((m) => <td class="p-4 text-center font-600">{m.rating}/5</td>)}</tr>
+          <tr><td class="p-4 font-500"></td>{machines.map(() => <td class="p-4 text-center"><a href="#" rel="sponsored nofollow noopener" class="text-caramel font-600 hover:text-or">Voir ↗</a></td>)}</tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-moka/50 mt-4 text-center">Liens affiliés — les prix sont indicatifs et peuvent varier chez le marchand.</p>
+  </section>
+</BaseLayout>
+
+<script>
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.compare-card');
+  const base = 'border-espresso/20 text-moka hover:border-or hover:text-caramel';
+  const on = 'bg-espresso text-ivoire border-espresso';
+  function paint() {
+    btns.forEach((b) => {
+      b.className = 'filter-btn text-sm font-600 px-5 py-2.5 rounded-full border transition-colors ' + (b.classList.contains('active') ? on : base);
+    });
+  }
+  paint();
+  btns.forEach((b) =>
+    b.addEventListener('click', () => {
+      btns.forEach((x) => x.classList.remove('active'));
+      b.classList.add('active');
+      paint();
+      const f = b.dataset.filter;
+      cards.forEach((c) => {
+        c.style.display = f === 'all' || c.dataset.cat === f ? '' : 'none';
+      });
+    })
+  );
+</script>
