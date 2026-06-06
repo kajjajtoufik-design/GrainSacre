@@ -3,22 +3,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const machines = [
   {
-    cat: 'auto', name: 'Barista Pro X', type: 'Automatique à grains', price: '699€', oldPrice: '799€',
+    cat: 'auto', name: "De'Longhi Magnifica S", type: 'Automatique à grain', price: '~399€', oldPrice: null,
     image: 'https://images.unsplash.com/photo-1610889556528-9a770e32642f?q=80&w=700&auto=format&fit=crop',
-    alt: 'Machine à café automatique en inox', rating: 4.6, recommended: true,
-    features: [['Broyeur intégré 13 réglages', true], ['Mousseur lait automatique', true], ['Écran tactile', true], ['Encombrement moyen', false]],
+    alt: "Machine à café automatique à grain De'Longhi", rating: 4.5, recommended: true,
+    features: [['Broyeur intégré 13 réglages', true], ['Buse vapeur pour le lait', true], ['15 bars de pression', true], ['Réservoir 1,8 L', true], ['Pas de mousseur automatique', false]],
   },
   {
-    cat: 'manuelle', name: 'Artisan Lever', type: 'Manuelle expresso', price: '449€', oldPrice: null,
+    cat: 'manuelle', name: "De'Longhi Dedica EC685", type: 'Manuelle (semi-auto)', price: '~179€', oldPrice: null,
     image: 'https://images.unsplash.com/photo-1565452344518-47faca79dc69?q=80&w=700&auto=format&fit=crop',
-    alt: 'Machine à espresso manuelle noire', rating: 4.3, recommended: false,
-    features: [['Contrôle total extraction', true], ['Buse vapeur pro', true], ['Sans broyeur', false], ['Prise en main exigeante', false]],
+    alt: "Machine à espresso manuelle compacte De'Longhi Dedica", rating: 4.3, recommended: false,
+    features: [['Très compacte (15 cm de large)', true], ['Buse vapeur', true], ['Café moulu et dosettes ESE', true], ['Sans broyeur', false], ['Demande un peu de pratique', false]],
   },
   {
-    cat: 'capsule', name: 'Compact Capsule', type: 'À capsules', price: '149€', oldPrice: null,
+    cat: 'capsule', name: 'Nespresso Vertuo Pop', type: 'À capsule', price: '~99€', oldPrice: null,
     image: 'https://images.unsplash.com/photo-1606791405792-1004f1718d0c?q=80&w=700&auto=format&fit=crop',
-    alt: 'Machine à capsules compacte', rating: 4.1, recommended: false,
-    features: [['Ultra compacte', true], ['Prise en main immédiate', true], ['Chauffe rapide 25s', true], ['Coût capsules récurrent', false]],
+    alt: 'Machine à capsule compacte Nespresso Vertuo Pop', rating: 4.2, recommended: false,
+    features: [['Ultra compacte', true], ['Prise en main immédiate', true], ['Plusieurs formats de tasse', true], ['Capsules propriétaires', false], ['Coût des capsules récurrent', false]],
   },
 ];
 const filters = [['all', 'Toutes'], ['auto', 'Automatique'], ['manuelle', 'Manuelle'], ['capsule', 'À capsules']];
@@ -29,7 +29,7 @@ const filters = [['all', 'Toutes'], ['auto', 'Automatique'], ['manuelle', 'Manue
     <div class="text-center mb-12">
       <span class="text-xs font-600 tracking-widest uppercase text-caramel">Outil interactif</span>
       <h1 class="font-display text-3xl sm:text-5xl font-600 mt-2 tracking-tight">Comparateur de machines à café</h1>
-      <p class="mt-4 text-moka/75 max-w-xl mx-auto">Filtrez selon vos critères et trouvez la machine qui vous correspond. Comparatif mis à jour en 2026.</p>
+      <p class="mt-4 text-moka/75 max-w-xl mx-auto">Notre sélection des modèles les plus populaires en 2026, basée sur les caractéristiques officielles et les avis disponibles. Filtrez selon vos critères pour trouver la machine qui vous correspond.</p>
     </div>
 
     <div class="flex flex-wrap gap-3 justify-center mb-10" id="filters">
@@ -73,7 +73,7 @@ const filters = [['all', 'Toutes'], ['auto', 'Automatique'], ['manuelle', 'Manue
         </tbody>
       </table>
     </div>
-    <p class="text-xs text-moka/50 mt-4 text-center">Liens affiliés — les prix sont indicatifs et peuvent varier chez le marchand.</p>
+    <p class="text-xs text-moka/50 mt-4 text-center max-w-2xl mx-auto">Prix indicatifs susceptibles de varier chez les marchands. Les notes reflètent les avis utilisateurs et tests disponibles en ligne, non un test réalisé par nos soins. Certains liens pourront être affiliés : ils nous soutiennent sans modifier le prix que vous payez.</p>
   </section>
 </BaseLayout>
 
