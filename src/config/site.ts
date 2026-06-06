@@ -1,10 +1,10 @@
 export const SITE = {
-  name: 'Maison Brûlot',
+  name: 'GrainSacre',
   tagline: "Le magazine du café d'exception",
   url: 'https://votredomaine.fr',
   description:
     "Guides, comparatifs et conseils d'experts pour sublimer votre café au quotidien. Machines, grains, méthodes douces.",
-  author: 'Maison Brûlot',
+  author: 'GrainSacre',
   // ────────────────────────────────────────────
   //  E-COMMERCE : passez à true le jour du lancement
   //  false = section "Shop en construction" + liste d'attente
