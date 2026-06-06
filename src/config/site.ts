@@ -1,5 +1,5 @@
 export const SITE = {
-  name: 'GrainSacre',
+  name: 'Grain Sacré',
   tagline: "Le magazine du café d'exception",
   url: 'https://votredomaine.fr',
   description:
