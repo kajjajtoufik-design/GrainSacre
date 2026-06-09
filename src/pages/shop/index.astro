@@ -56,8 +56,8 @@ const newsletterAction = SITE.newsletterAction || '#';
           <div class="mt-12 bg-ivoire rounded-3xl border border-espresso/10 p-7 sm:p-9 max-w-lg mx-auto shadow-xl shadow-espresso/5">
             <p class="font-display text-xl font-600">Soyez prévenu·e de l'ouverture</p>
             <p class="text-sm text-moka/70 mt-2">Inscrivez-vous à la liste d'attente et recevez <span class="text-caramel font-600">-15% sur votre première commande</span>.</p>
-            <form action={newsletterAction} method="post" class="mt-6 flex flex-col sm:flex-row gap-3">
-              <input type="email" name="email" required placeholder="votre@email.com" class="flex-1 px-5 py-3.5 rounded-full border border-espresso/20 bg-creme/50 focus:outline-none focus:border-or focus:ring-2 focus:ring-or/20" />
+            <form action={newsletterAction} method="POST" target="_blank" class="mt-6 flex flex-col sm:flex-row gap-3">
+              <input type="email" name={SITE.newsletterField || 'EMAIL'} required placeholder="votre@email.com" autocomplete="email" class="flex-1 px-5 py-3.5 rounded-full border border-espresso/20 bg-creme/50 focus:outline-none focus:border-or focus:ring-2 focus:ring-or/20" />
               <button type="submit" class="bg-or text-espresso font-700 px-6 py-3.5 rounded-full hover:bg-o1 transition-colors whitespace-nowrap">Me prévenir</button>
             </form>
             <p class="text-xs text-moka/50 mt-3">Ouverture prévue 2026 · Aucun spam, désinscription en un clic.</p>
