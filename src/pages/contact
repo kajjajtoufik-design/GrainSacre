@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config/site';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Une question, une suggestion, une demande de partenariat ? Contactez l'équipe de Grain Sacré, nous serons ravis d'échanger avec vous."
+>
+  <section class="max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-20 sm:pb-28">
+    <div class="text-center">
+      <span class="text-xs font-600 tracking-widest uppercase text-caramel">Échangeons</span>
+      <h1 class="font-display text-3xl sm:text-5xl font-600 mt-2 tracking-tight">Contact</h1>
+      <p class="mt-4 text-moka/75 max-w-xl mx-auto leading-relaxed">
+        Une question sur le café, une suggestion d'article, une remarque sur un comparatif ou une
+        demande de partenariat ? Nous lisons tous les messages avec plaisir.
+      </p>
+    </div>
+
+    <!-- Carte email -->
+    <div class="mt-12 bg-ivoire rounded-3xl border border-espresso/10 p-8 sm:p-10 text-center shadow-xl shadow-espresso/5">
+      <div class="inline-flex w-14 h-14 rounded-full bg-sauge/20 items-center justify-center text-2xl mb-5">✉</div>
+      <p class="font-display text-xl font-600">Écrivez-nous directement</p>
+      <p class="text-sm text-moka/70 mt-2 max-w-md mx-auto">
+        Le plus simple est de nous envoyer un email. Nous répondons généralement sous 2 à 3 jours
+        ouvrés.
+      </p>
+      <!-- Email protégé : assemblé par le navigateur, invisible pour la plupart des robots spammeurs -->
+      <a
+        id="contact-mail"
+        href="#"
+        class="mt-6 inline-flex items-center gap-2 bg-espresso text-ivoire font-600 px-6 py-3.5 rounded-full hover:bg-moka transition-colors"
+      >
+        <span>Nous contacter par email</span>
+      </a>
+      <p class="text-xs text-moka/50 mt-4">
+        Ou recopiez notre adresse : <span id="contact-mail-text" class="font-500 text-moka">[chargement…]</span>
+      </p>
+    </div>
+
+    <!-- Réassurance / autres pistes -->
+    <div class="mt-10 grid sm:grid-cols-2 gap-5">
+      <div class="bg-creme/60 rounded-2xl p-6">
+        <p class="font-600 text-espresso">Vous cherchez un conseil ?</p>
+        <p class="text-sm text-moka/75 mt-2">
+          Beaucoup de réponses se trouvent déjà dans nos
+          <a href="/blog/" class="text-caramel underline decoration-or/40 hover:decoration-or">guides du magazine</a>
+          et notre
+          <a href="/comparateur/" class="text-caramel underline decoration-or/40 hover:decoration-or">comparateur de machines</a>.
+        </p>
+      </div>
+      <div class="bg-creme/60 rounded-2xl p-6">
+        <p class="font-600 text-espresso">Une marque, un partenariat ?</p>
+        <p class="text-sm text-moka/75 mt-2">
+          Nous étudions les propositions qui ont du sens pour nos lecteurs. Présentez-nous votre
+          projet par email, nous reviendrons vers vous.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Assemble l'adresse au chargement pour limiter le spam (les robots lisent rarement le JS).
+  const user = 'contact';
+  const domain = 'grain-sacre.fr';
+  const addr = user + '@' + domain;
+  const link = document.getElementById('contact-mail');
+  const text = document.getElementById('contact-mail-text');
+  if (link) link.setAttribute('href', 'mailto:' + addr);
+  if (text) text.textContent = addr;
+</script>
