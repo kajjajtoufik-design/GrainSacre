@@ -2,7 +2,7 @@
 title: "Machine à grain ou à capsule : que choisir vraiment ?"
 description: "Goût, coût, praticité, écologie : on compare les machines à café à grain et à capsule pour vous aider à choisir celle qui correspond à vos besoins."
 pubDate: 2026-06-27
-image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1400&auto=format&fit=crop"
+image: "https://images.unsplash.com/photo-1525088553748-01d6e210e00b?q=80&w=1400&auto=format&fit=crop"
 imageAlt: "Machine à café à grain et machine à capsule côte à côte"
 category: "Machines"
 readingTime: 6
