@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Mentions légales"
+  description="Mentions légales du site Grain Sacré : éditeur, hébergeur et informations légales."
+>
+  <section class="max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-20 sm:pb-28">
+    <h1 class="font-display text-3xl sm:text-4xl font-600 tracking-tight">Mentions légales</h1>
+    <p class="text-sm text-moka/60 mt-2">Dernière mise à jour : [À COMPLÉTER : date]</p>
+
+    <div class="prose-coffee mt-8">
+      <h2>Éditeur du site</h2>
+      <p>
+        Le site Grain Sacré (accessible à l'adresse www.grain-sacre.fr) est édité par
+        <strong>KAJTOU COFFEE</strong>, éditeur individuel non professionnel.
+      </p>
+      <p>
+        Contact : contact@grain-sacre.fr<br />
+        Adresse postale communiquée à l'hébergeur, disponible sur demande des autorités habilitées.
+      </p>
+      <p class="text-sm text-moka/60">
+        <em>
+          Note : en tant qu'éditeur particulier non professionnel, vous pouvez conserver l'anonymat
+          de votre adresse vis-à-vis du public, à condition de l'avoir communiquée à votre
+          hébergeur. Si vous préférez, vous pouvez aussi afficher votre adresse complète ci-dessus.
+        </em>
+      </p>
+
+      <h2>Directeur de la publication</h2>
+      <p>KAJTOU COFFEE</p>
+
+      <h2>Hébergement</h2>
+      <p>
+        Le site est hébergé par <strong>Vercel Inc.</strong><br />
+        340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis<br />
+        Site : vercel.com
+      </p>
+      <p>
+        Le nom de domaine est géré par <strong>LWS</strong> (Ligne Web Services)<br />
+        10 rue Penthièvre, 75008 Paris, France<br />
+        Site : lws.fr
+      </p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble des contenus présents sur ce site (textes, articles, mise en page) sont, sauf
+        mention contraire, la propriété de l'éditeur. Toute reproduction sans autorisation est
+        interdite. Certaines images proviennent de banques d'images libres de droits.
+      </p>
+
+      <h2>Liens d'affiliation</h2>
+      <p>
+        Ce site contient des liens d'affiliation. Lorsqu'un visiteur achète un produit via l'un de
+        ces liens, l'éditeur peut percevoir une commission, sans surcoût pour l'acheteur. Ces liens
+        sont signalés et n'influencent pas l'objectivité de nos contenus.
+      </p>
+
+      <h2>Données personnelles</h2>
+      <p>
+        Le traitement de vos données personnelles est détaillé dans notre
+        <a href="/confidentialite/">politique de confidentialité</a>.
+      </p>
+
+      <h2>Responsabilité</h2>
+      <p>
+        Les informations publiées sur ce site sont fournies à titre indicatif. L'éditeur s'efforce
+        de les tenir à jour mais ne saurait garantir leur exhaustivité ou leur exactitude à tout
+        moment.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
