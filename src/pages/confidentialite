@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Politique de confidentialité"
+  description="Comment Grain Sacré collecte, utilise et protège vos données personnelles, conformément au RGPD."
+>
+  <section class="max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-20 sm:pb-28">
+    <h1 class="font-display text-3xl sm:text-4xl font-600 tracking-tight">Politique de confidentialité</h1>
+    <p class="text-sm text-moka/60 mt-2">Dernière mise à jour : [À COMPLÉTER : date]</p>
+
+    <div class="prose-coffee mt-8">
+      <p>
+        La présente politique explique comment le site Grain Sacré collecte et traite vos données
+        personnelles, dans le respect du Règlement général sur la protection des données (RGPD).
+      </p>
+
+      <h2>Responsable du traitement</h2>
+      <p>
+        Le responsable du traitement des données est l'éditeur du site, [À COMPLÉTER : Prénom NOM],
+        joignable à l'adresse contact@grain-sacre.fr.
+      </p>
+
+      <h2>Quelles données collectons-nous ?</h2>
+      <p>
+        Nous collectons votre <strong>adresse email</strong> uniquement lorsque vous vous inscrivez
+        volontairement à notre newsletter ou à notre liste d'attente, via les formulaires du site.
+        Aucune autre donnée personnelle n'est demandée.
+      </p>
+
+      <h2>Pourquoi ces données ?</h2>
+      <p>
+        Votre email sert exclusivement à vous envoyer notre newsletter (articles, conseils, offres)
+        et, le cas échéant, à vous prévenir de l'ouverture de notre boutique. Nous ne vous enverrons
+        rien d'autre sans votre accord.
+      </p>
+
+      <h2>Où sont stockées vos données ?</h2>
+      <p>
+        La gestion de notre newsletter et le stockage des emails sont assurés par <strong>Brevo</strong>
+        (Sendinblue SAS), prestataire français conforme au RGPD. Vos données sont hébergées au sein
+        de l'Union européenne. Pour en savoir plus, consultez la politique de confidentialité de
+        Brevo sur brevo.com.
+      </p>
+
+      <h2>Combien de temps ?</h2>
+      <p>
+        Vos données sont conservées tant que vous restez abonné. Vous pouvez vous désinscrire à tout
+        moment via le lien présent en bas de chaque email ; vos données sont alors supprimées.
+      </p>
+
+      <h2>Vos droits</h2>
+      <p>
+        Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement et
+        d'opposition concernant vos données. Pour exercer ces droits, écrivez-nous à
+        contact@grain-sacre.fr. Vous pouvez également introduire une réclamation auprès de la CNIL
+        (cnil.fr).
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Ce site utilise un minimum de cookies techniques nécessaires à son fonctionnement. Si des
+        outils de mesure d'audience (comme Google Search Console ou un outil d'analyse) sont
+        ajoutés, cette section sera mise à jour en conséquence.
+      </p>
+
+      <h2>Liens d'affiliation</h2>
+      <p>
+        Certains liens sortants sont des liens d'affiliation. Les sites marchands vers lesquels ils
+        pointent (Amazon, etc.) appliquent leurs propres politiques de confidentialité et peuvent
+        déposer leurs propres cookies une fois que vous y accédez.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
