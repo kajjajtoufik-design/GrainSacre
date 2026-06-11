@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="À propos"
+  description="Découvrez Grain Sacré, le magazine indépendant dédié à l'univers du café : notre mission, notre approche et les personnes derrière le site."
+>
+  <section class="max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-20 sm:pb-28">
+    <div class="text-center">
+      <span class="text-xs font-600 tracking-widest uppercase text-caramel">Notre histoire</span>
+      <h1 class="font-display text-3xl sm:text-5xl font-600 mt-2 tracking-tight">À propos de Grain Sacré</h1>
+    </div>
+
+    <div class="prose-coffee mt-10">
+      <p>
+        Grain Sacré est né d'une conviction simple : un bon café ne devrait pas être réservé aux
+        experts. Derrière les termes techniques, les machines intimidantes et les méthodes
+        mystérieuses, il y a un plaisir accessible à tous — à condition d'avoir les bonnes clés.
+      </p>
+
+      <p>Grain Sacré est né d'une passion qui ne m'a jamais quitté : celle du café, du vrai, celui qui raconte une histoire à chaque gorgée.
+Barista de métier, j'ai passé des années derrière la machine à apprivoiser l'extraction, à ajuster la mouture au gramme près, à chercher cet équilibre fragile entre acidité, corps et arôme qui transforme une simple tasse en moment suspendu. Mais c'est en voyageant que ma passion a vraiment pris racine. De plantation en plantation, j'ai eu la chance de découvrir le café à sa source : goûter un grain pur fraîchement récolté, comprendre le travail d'un producteur, mesurer tout ce qui sépare un café industriel d'un café d'exception. Chaque région, chaque terroir m'a appris quelque chose de nouveau.
+De ces rencontres sont nés des liens précieux. Aujourd'hui, je collabore avec des torréfacteurs reconnus, des artisans exigeants qui partagent la même obsession du détail et du goût juste. C'est cette expérience, ce réseau et cette passion que je veux mettre à votre service à travers Grain Sacré.
+Mon objectif est simple : démocratiser le bon café. Vous aider à choisir la bonne machine, les bons grains, la bonne méthode — sans jargon inutile, avec des conseils testés et honnêtes. Que vous prépariez votre tout premier espresso ou que vous cherchiez à perfectionner votre rituel, vous êtes au bon endroit.
+Bienvenue chez Grain Sacré. Servez-vous une tasse, et explorons ensemble cet univers fascinant.</p>
+
+      <h2>Notre mission</h2>
+      <p>
+        Nous testons, comparons et expliquons, pour vous aider à faire les bons choix : quelle
+        machine acheter, quels grains privilégier, quelle méthode adopter. Nos guides sont pensés
+        pour être clairs, honnêtes et utiles, que vous débutiez ou que vous cherchiez à perfectionner
+        votre rituel quotidien.
+      </p>
+
+      <h2>Notre indépendance</h2>
+      <p>
+        Grain Sacré est un média indépendant. Pour financer notre travail, certains de nos liens sont
+        affiliés : si vous achetez un produit que nous recommandons, nous touchons une petite
+        commission, sans surcoût pour vous. Cela ne change rien à notre objectivité : nous ne
+        recommandons que ce qui nous semble réellement pertinent pour nos lecteurs.
+      </p>
+
+      <h2>Une question ?</h2>
+      <p>
+        Nous sommes toujours ravis d'échanger avec notre communauté. N'hésitez pas à nous écrire via
+        notre <a href="/contact/">page contact</a>, ou à vous abonner à
+        <a href="/#newsletter">notre newsletter</a> pour ne rien manquer.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
