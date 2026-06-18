@@ -2,7 +2,7 @@
 title: "Comment détartrer sa machine à café : le guide pas à pas"
 description: "Pourquoi, quand et comment détartrer votre machine à café pour prolonger sa durée de vie et préserver le goût. Méthode complète, naturelle ou avec détartrant."
 pubDate: 2026-06-30
-image: "public/images/detartrage.png"
+image: "/images/detartrage.png"
 imageAlt: "Entretien et détartrage d'une machine à café"
 category: "Machines"
 readingTime: 6
