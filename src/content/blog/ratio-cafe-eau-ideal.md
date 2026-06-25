@@ -2,7 +2,7 @@
 title: "Le ratio café/eau idéal selon la méthode de préparation"
 description: "Combien de café pour quelle quantité d'eau ? Le guide des ratios pour l'espresso, la French press, la V60, le filtre et le cold brew, pour doser parfaitement."
 pubDate: 2026-07-11
-image: "images/ratio-cafe-eau-ideal.png"
+image: "/images/ratio-cafe-eau-ideal.png"
 imageAlt: "Dosage du café sur une balance de précision"
 category: "Méthodes douces"
 readingTime: 6
