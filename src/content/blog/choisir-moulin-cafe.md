@@ -2,7 +2,7 @@
 title: "Comment bien choisir son moulin à café (manuel ou électrique)"
 description: "Lames ou meules, manuel ou électrique, réglages de mouture : le guide pour choisir le moulin à café adapté à votre méthode et à votre budget."
 pubDate: 2026-07-07
-image: "/images/choisir-moulin-cafe"
+image: "/images/choisir-moulin-cafe.png"
 imageAlt: "Moulin à café avec grains fraîchement moulus"
 category: "Accessoires"
 readingTime: 6
