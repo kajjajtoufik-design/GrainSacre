@@ -2,7 +2,7 @@
 title: "Café bio et équitable : comment s'y retrouver dans les labels"
 description: "Bio, équitable, commerce direct… Que garantissent vraiment les labels du café ? Le guide pour décrypter les certifications et acheter de façon éclairée."
 pubDate: 2026-07-21
-image: "\images\cafe-bio-equitable-labels.png"
+image: "/images/cafe-bio-equitable-labels.png"
 imageAlt: "Sac de café portant des labels bio et équitable"
 category: "Café en grain"
 readingTime: 6
