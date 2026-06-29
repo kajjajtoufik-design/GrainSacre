@@ -2,7 +2,7 @@
 title: "Le café décaféiné : comment c'est fait et que vaut-il vraiment ?"
 description: "Comment retire-t-on la caféine du café ? Le décaféiné a-t-il moins de goût ? On vous explique les procédés et comment choisir un bon déca."
 pubDate: 2026-07-23
-image: "cafe-decafeine.png"
+image: "/images/cafe-decafeine.png"
 imageAlt: "Tasse de café décaféiné posée sur une table"
 category: "Café en grain"
 readingTime: 5
